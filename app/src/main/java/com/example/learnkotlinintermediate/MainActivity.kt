@@ -3,10 +3,13 @@ package com.example.learnkotlinintermediate
     fun main(){
 
         // Lesson one: Enum Classes with integer associated
-        enumClasses()
+        //enumClasses()
+
+        // Lesson two: Nested and Inner Classes
+        nestedAndInnerClasses()
     }
 
-    // Enum Classes
+    // Lesson one
     enum class Direction(val dir : Int) {
 
         NORTH(1), SOUTH(-1), EAST(1), WEST(-1);
@@ -42,4 +45,18 @@ package com.example.learnkotlinintermediate
 
         // Initialization
         println("$userDirection pos: ${userDirection.dir}")
+    }
+
+    // Lesson two
+    private fun nestedAndInnerClasses(){
+
+        // Nested Class
+        val myNestedClass = MyNestedAndInnerClass.MyNestedClass()
+        val sum = myNestedClass.sum(2,4)
+        println("Resultado: $sum")
+
+        // Inner Class
+        val myInnerClass = MyNestedAndInnerClass().myInnerClass()
+        val sumTwo = myInnerClass.sumTwo(5)
+        println("Resultado de sumar dos: $sumTwo")
     }
