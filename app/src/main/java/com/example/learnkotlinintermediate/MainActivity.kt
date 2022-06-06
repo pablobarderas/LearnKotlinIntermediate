@@ -69,9 +69,14 @@ package com.example.learnkotlinintermediate
     private fun classIneritance(){
 
         // Instance of Programmer and Designer
-        val programmer = Programmer("Pablo", 21)
+        val programmer = Programmer("Pablo", 21, "Kotlin")
         programmer.work()
+        programmer.sayLanguage()
+        programmer.goToWork()
+        programmer.drive()
 
+        println("---------------------------")
         val designer = Designer("Viky", 16)
         designer.work()
+        designer.goToWork()
     }
