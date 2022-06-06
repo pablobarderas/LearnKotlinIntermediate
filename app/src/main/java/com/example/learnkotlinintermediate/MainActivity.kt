@@ -7,6 +7,10 @@ package com.example.learnkotlinintermediate
 
         // Lesson two: Nested and Inner Classes
         nestedAndInnerClasses()
+
+        // Lesson three: Inheritance
+        classIneritance()
+
     }
 
     // Lesson one
@@ -59,4 +63,15 @@ package com.example.learnkotlinintermediate
         val myInnerClass = MyNestedAndInnerClass().myInnerClass()
         val sumTwo = myInnerClass.sumTwo(5)
         println("Resultado de sumar dos: $sumTwo")
+    }
+
+    // Lesson three
+    private fun classIneritance(){
+
+        // Instance of Programmer and Designer
+        val programmer = Programmer("Pablo", 21)
+        programmer.work()
+
+        val designer = Designer("Viky", 16)
+        designer.work()
     }
