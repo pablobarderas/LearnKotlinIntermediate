@@ -6,10 +6,13 @@ package com.example.learnkotlinintermediate
         //enumClasses()
 
         // Lesson two: Nested and Inner Classes
-        nestedAndInnerClasses()
+        //nestedAndInnerClasses()
 
         // Lesson three: Inheritance
-        classIneritance()
+        //classIneritance()
+
+        // Lesson four: Interfaces
+        interfaces()
 
     }
 
@@ -79,4 +82,15 @@ package com.example.learnkotlinintermediate
         val designer = Designer("Viky", 16)
         designer.work()
         designer.goToWork()
+    }
+
+    // Lesson four
+    private fun interfaces(){
+
+        val gamer = Person("Gamer", 23)
+        gamer.play()
+        gamer.stream()
+        gamer.game = "Pac-Man"
+        println("******* Changing game ... *******")
+        gamer.play()
     }
