@@ -12,7 +12,10 @@ package com.example.learnkotlinintermediate
         //classIneritance()
 
         // Lesson four: Interfaces
-        interfaces()
+        //interfaces()
+
+        // Visibility Modifiers
+        visibilityModifiers()
 
     }
 
@@ -93,4 +96,11 @@ package com.example.learnkotlinintermediate
         gamer.game = "Pac-Man"
         println("******* Changing game ... *******")
         gamer.play()
+    }
+
+    // Lesson five
+    private fun visibilityModifiers() {
+        val visibility = Visibility()
+        visibility.name = "Pablo"
+        //visibility.sayMyName()
     }
