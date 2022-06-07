@@ -12,7 +12,13 @@ package com.example.learnkotlinintermediate
         //classIneritance()
 
         // Lesson four: Interfaces
-        interfaces()
+        //interfaces()
+
+        // Lesson five: Visibility Modifiers
+        //visibilityModifiers()
+
+        // Lesson six: Data classes
+        dataClasses()
 
     }
 
@@ -93,4 +99,38 @@ package com.example.learnkotlinintermediate
         gamer.game = "Pac-Man"
         println("******* Changing game ... *******")
         gamer.play()
+    }
+
+    // Lesson five
+    private fun visibilityModifiers() {
+        val visibility = Visibility()
+        visibility.name = "Pablo"
+        //visibility.sayMyName()
+    }
+
+    // Lesson six
+    private fun dataClasses(){
+
+        val vicky = Worker("Vicky", 16, "Pharmaceutic")
+        vicky.lastWork = "School"
+
+        // Without nothing inside
+        val iker = Worker()
+        val pablo = Worker()
+
+        // equals && hasCode
+        if (vicky.equals(iker)) println("They are equal") else println("They are not the same")
+        if (pablo == iker) println("They are equal") else println("They are not the same")
+
+        // toString
+        println(vicky.toString())
+
+        // copy
+        val hugo = iker.copy(age = 18)
+        println("Hugo dates: ${hugo.toString()}")
+
+        // componentN (Take the first two properties)
+        val (name, age) = vicky
+        println(name)
+        println(age)
     }
