@@ -1,5 +1,9 @@
 package com.example.learnkotlinintermediate
 
+typealias MyMapList = MutableMap<Int, ArrayList<String>>
+typealias Myfun = (Int, String, MyMapList) -> Boolean
+typealias MyNestedClass = MyNestedAndInnerClass.MyNestedClass
+
     fun main(){
 
         // Lesson one: Enum Classes with integer associated
@@ -18,7 +22,10 @@ package com.example.learnkotlinintermediate
         //visibilityModifiers()
 
         // Lesson six: Data classes
-        dataClasses()
+        //dataClasses()
+
+        // Lesson seven: Type Aliases
+        typeAliases()
 
     }
 
@@ -64,7 +71,7 @@ package com.example.learnkotlinintermediate
     private fun nestedAndInnerClasses(){
 
         // Nested Class
-        val myNestedClass = MyNestedAndInnerClass.MyNestedClass()
+        val myNestedClass = MyNestedClass()
         val sum = myNestedClass.sum(2,4)
         println("Resultado: $sum")
 
@@ -133,4 +140,20 @@ package com.example.learnkotlinintermediate
         val (name, age) = vicky
         println(name)
         println(age)
+    }
+
+    // Lesson seven
+
+    // All aliases defined at the beginning
+
+    private var myMap : MyMapList = mutableMapOf()
+
+    private fun typeAliases() {
+
+        var myNewMap : MyMapList = mutableMapOf()
+        myNewMap[1] = arrayListOf("Pablo", "Barderas")
+        myNewMap[2] = arrayListOf("Vicky", "Fernández")
+
+        myMap = myNewMap
+
     }
