@@ -1,6 +1,8 @@
 package com.example.learnkotlinintermediate
 
 import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.concurrent.thread
 
 typealias MyMapList = MutableMap<Int, ArrayList<String>>
 typealias Myfun = (Int, String, MyMapList) -> Boolean
@@ -33,7 +35,10 @@ typealias MyNestedClass = MyNestedAndInnerClass.MyNestedClass
         //destructuring()
 
         // Lesson nine: Extensions
-        extensions()
+        //extensions()
+
+        // Lesson ten: Lambdas
+        lambdas()
     }
 
     // Lesson one
@@ -201,4 +206,60 @@ typealias MyNestedClass = MyNestedAndInnerClass.MyNestedClass
         var myDateNullable : Date? = null
         println(myDateNullable.customFormat())
         println(myDateNullable.formatSize)
+    }
+
+    // Lesson ten
+    private fun lambdas() {
+
+        val myIntList = arrayListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+        // .filter check a condition and return it if is true
+        val myFilterIntList = myIntList.filter { myInt ->
+
+            println(myInt)
+            // Because I also want to add it
+            if (myInt == 1) {
+                return@filter true
+            }
+
+            myInt > 5 // return this condition
+        }
+        println(myFilterIntList)
+
+        val myFunSum = fun (first: Int, second: Int): Int = first + second
+        val myMultFun = fun (first: Int, second: Int): Int = first * second
+
+        println(myOperateFun(4,5,myFunSum))
+        println(myOperateFun(4,5,myMultFun))
+        println(myOperateFun(4,4) { first, second -> first - second })
+
+        myAsyncFun("Pablo", ) { name ->
+            println(name)
+
+        }
+    }
+
+    private fun myOperateFun (first: Int, second: Int, myFun: (Int, Int) -> Int) : Int {
+        return myFun(first, second)
+    }
+
+    // Unit == void
+    private fun myAsyncFun(name:String, hello: (String) -> Unit) {
+        val myNewString = "Hello $name!"
+        hello(myNewString)
+
+        thread {
+            Thread.sleep(5000)
+            hello(myNewString)
+        }
+
+        thread {
+            Thread.sleep(1000)
+            hello(myNewString)
+        }
+
+        thread {
+            Thread.sleep(7000)
+            hello(myNewString)
+        }
     }
