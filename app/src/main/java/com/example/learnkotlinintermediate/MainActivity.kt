@@ -1,5 +1,7 @@
 package com.example.learnkotlinintermediate
 
+import java.util.*
+
 typealias MyMapList = MutableMap<Int, ArrayList<String>>
 typealias Myfun = (Int, String, MyMapList) -> Boolean
 typealias MyNestedClass = MyNestedAndInnerClass.MyNestedClass
@@ -28,7 +30,10 @@ typealias MyNestedClass = MyNestedAndInnerClass.MyNestedClass
         //typeAliases()
 
         // Lesson eight: Destructuring
-        destructuring()
+        //destructuring()
+
+        // Lesson nine: Extensions
+        extensions()
     }
 
     // Lesson one
@@ -184,4 +189,16 @@ typealias MyNestedClass = MyNestedAndInnerClass.MyNestedClass
 
     private fun myWorker() : Worker {
         return Worker("Vicky", 16, "Pharmaceutic")
+    }
+
+    // Lesson nine
+    private fun extensions() {
+
+        val myDate = Date()
+        println(myDate.customFormat())
+        println(myDate.formatSize)
+
+        var myDateNullable : Date? = null
+        println(myDateNullable.customFormat())
+        println(myDateNullable.formatSize)
     }
