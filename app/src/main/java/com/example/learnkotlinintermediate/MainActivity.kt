@@ -25,8 +25,10 @@ typealias MyNestedClass = MyNestedAndInnerClass.MyNestedClass
         //dataClasses()
 
         // Lesson seven: Type Aliases
-        typeAliases()
+        //typeAliases()
 
+        // Lesson eight: Destructuring
+        destructuring()
     }
 
     // Lesson one
@@ -156,4 +158,30 @@ typealias MyNestedClass = MyNestedAndInnerClass.MyNestedClass
 
         myMap = myNewMap
 
+    }
+
+    // Lesson eight
+    private fun destructuring() {
+
+        // With '_' we skip the second valor
+        val pablo = Worker("Pablo", 21, "Programmer")
+        val (name, _, work) = pablo
+        println("$name, $work")
+
+        // With DataClasses attributes can be accessed through 'componentX'
+        val vicky = Worker("Vicky", 16, "Pharmaceutic")
+        println(vicky.component1())
+
+        val (nameV, ageV, workV) = myWorker()
+
+        // ComponentN, destructuring on Maps
+        val myMap = mapOf(1 to "Pablo", 2 to "Barderas")
+        for ((id, valor) in myMap) {
+            println("$id, $valor")
+        }
+
+    }
+
+    private fun myWorker() : Worker {
+        return Worker("Vicky", 16, "Pharmaceutic")
     }
